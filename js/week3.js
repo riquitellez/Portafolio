@@ -175,4 +175,5 @@ const people = [
   const newComments = [
       ...comments.slice(0, commentIndex),
       ...comments.slice(commentIndex + 1)
-  ]
+  ];
+  console.table(newComments);
