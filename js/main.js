@@ -5,9 +5,16 @@ const links = [
     },
     {
         label: "Week2 notes",
-        url: "week1/index.html"
-    }
+        url: "week2/index.html"
+    },
+    {
+      label: "Week3 notes",
+      url: "week3/index.html"
+  }
   ]
 
-  for(var i = 1; i<links.)
+  for(var i = 1; i<links.length; i++)
+  {
+    
+  }
 
