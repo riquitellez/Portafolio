@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 4 notes</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <section>
+        <h1>Week 4 notes</h1>
+        <h2>Encapsulation</h2>
+            <p>
+                the inner workings are kept hidden inside the object and only the essential functionalities are exposed to the end user.
+                ex. When you make orange juice you turn on the machine and don't really know how it does it but you know it comes out as juice.
+            </p>
+        <h2>Polymorphism</h2>
+            <p>
+                various objects can share the same method, but also have the ability to override shared methods with a more
+                specific implementation.
+
+                ex. The same juicer can be used with other fruits.
+            </p>
+        <h2>Static Methods</h2>
+            <p>
+                A static method is called by the class directly rather than by instances of the class.
+
+                For example, the Dice class could have a method
+                class Dice {
+                constructor(sides=6) {
+                this.sides = sides;
+                }
+                roll() {
+                return Math.floor(this.sides * Math.random() + 1)
+                }
+                static description() {
+                return 'A way of choosing random numbers'
+                }
+                }
+                This method is called from the Dice class like so:
+                Dice.description()
+                << 'A way of choosing random numbers'
+                Static methods are not available to instances of the class. So, in our example,
+                the instances of Dice such as redDice and blueDice cannot call the static
+                description() method:
+                redDice.description
+                << TypeError: red.description is not a function
+                
+            </p>
+            
+        <h2>Composition Over Inheritance
+        </h2>
+            <p>
+                When you inherit from a class, there are many not needed methods. 
+
+                If you want to use a particular method from a class, but it has lots of
+properties and methods you don't need, then it would be preferable to just
+'borrow' the method instead, as we saw in the last section. So, borrow the
+banana method from the Gorilla class instead of inheriting the whole Gorilla!
+banana = Gorilla.prototype.banana;
+
+            </p>
+    </section>
+</body>
+</html>
