@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 4 notes</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <section>
+        <h1>Week 5 notes</h1>
+        <h2>Strict mode</h2>
+            <p>
+                You can put 'use strict'; on the first line of a JS file and it will produce exceptions due to poor style as it pretty much takes them as actual errors.
+                Because you might work with other people's code, it is recommended to just use it within a function where you could place all your code.
+            </p>
+        <h2>Linting Tools</h2>
+            <p>
+                There are some tools that will help you get better at coding. Some of them are JS Lint, JS Hinr and ES Lint. What they do is highlight any sloppy programming practices 
+                There is the option to downloaded as a plugin or even a software. Seems interesting and something to really look into for good practices.
+            </p>
+        <h2>Debugging in the Browser</h2>
+            <h3>Alert</h3> 
+                <p>
+                    It might not be the best option but you can definitelly use it to see the value of the variables.
+                    e.g 
+                    function amIOldEnough(age){
+                        if (age = 12) {
+                        alert(age);
+                        return 'No, sorry.';
+                        } else if (age < 18) {
+                        return 'Only if you are accompanied by an adult.';
+                        }
+                        else {
+                        return 'Yep, come on in!';
+                        }
+                    }       
+                    
+                    If you see that although the value is something and its not showing the correct message, you'll have to take a look at the if statement.
+                </p>
+                <h3>console.log</h3> 
+                <p>
+                    similar to alert. You put the function with the variable you want to check and you'll be able to see it in your console.                  
+                </p>
+                <h3>console.track</h3> 
+                <p>
+                    This will show the functions that were called in the lead up to an exception occurring while the code is running.                  
+                </p>
+                <h3>debugger</h3> 
+                <p>
+                    This is pretty cool. Put debugger inside a function and it works as a break point. You can then start going thorugh the code and ceck the value of each variable.                  
+                    e.g.
+                    function amIOldEnough(age){
+                        debugger;
+                        if (age < 12) {
+                        debugger;
+                        return 'No, sorry.';
+                        } else if (age < 18) {
+                        debugger;
+                        return 'Only if you are accompanied by an adult.';
+                        } else {
+                        debugger;
+                        return 'Yep, come on in!';
+                        }
+                        }
+                        amIOldEnough(16);
+                </p>
+
+        <h2>Exception Handling
+        </h2>
+            <p>
+                Handling exceptions is focused on the user. If we don't handle them it will appear as if it had crashed. PRetty much it will help keep the program running despite the excetion.
+                
+                The try, catch, finally structure will help us when we know the code might result in an exception.
+
+                function imaginarySquareRoot(number) {
+                    'use strict';
+                    let answer;
+                    try {
+                    answer = String(squareRoot(number));
+                    } catch(error) {
+                    answer = squareRoot(-number)+"i";
+                    } finally {
+                    return `+ or - ${answer}`;
+                    }
+                    }
+
+                
+            </p>
+    </section>
+</body>
+</html>
