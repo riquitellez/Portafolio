@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 7 notes</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <section>
+        <h1>Week 5 notes</h1>
+        <h2>Ajax</h2>
+            <p>
+                Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading.
+            </p>
+        <h2>FormData</h2>
+            <p>
+                A FormData instance is created using a constructor function:
+const data = new FormData();
+            </p>
+            <p>
+                The FormData interface helps to reduce the amount of code
+needed when submitting forms.
+            </p>
+            <p>
+                In the todo list example we could change it to this:
+
+                const form = document.forms['todo'];
+form.addEventListener('submit', addTask, false);
+function addTask(event) {
+event.preventDefault();
+const task = new FormData(form);
+const url = `http://echo.jsontest.com/id/1/title/${form.task.value}`;
+const headers = new Headers({
+'Accept': 'application/json',
+'Content-Type': 'application/json'
+});
+const request = new Request(url,
+{
+method: 'POST',
+mode: 'cors',
+header: headers,
+body: JSON.stringify(task)
+}
+)
+fetch(request)
+.then( response => response.json() )
+.then( data => console.log(`${data.title} saved with an id of ${data.id}`) )
+.catch( error => console.log('There was an error:', error))
+}
+
+            </p>
+            <p>
+                we create a new FormData instance using the FormData()
+                constructor function and provide the form as an argument. This does all the
+                hard work of creating the task object for us.    
+            </p>
+            <p>
+                It’s also possible to add data to the form data instance as key-value pairs
+using the append() method:
+data = new FormData(); // no form provided as an argument creates an empty form data instance
+data.append('height', 75);
+            </p>
+            <p>
+                The FormData instance will automatically create the necessary
+                settings required, and take care of all the hard work if any file uploads are
+                present in the form.                 
+            </p>
+        <h2>Debugging in the Browser</h2>
+            <h3>Alert</h3> 
+                <p>
+                    It might not be the best option but you can definitelly use it to see the value of the variables.
+                    e.g 
+                    function amIOldEnough(age){
+                        if (age = 12) {
+                        alert(age);
+                        return 'No, sorry.';
+                        } else if (age < 18) {
+                        return 'Only if you are accompanied by an adult.';
+                        }
+                        else {
+                        return 'Yep, come on in!';
+                        }
+                    }       
+                    
+                    If you see that although the value is something and its not showing the correct message, you'll have to take a look at the if statement.
+                </p>
+                <h3>console.log</h3> 
+                <p>
+                    similar to alert. You put the function with the variable you want to check and you'll be able to see it in your console.                  
+                </p>
+                <h3>console.track</h3> 
+                <p>
+                    This will show the functions that were called in the lead up to an exception occurring while the code is running.                  
+                </p>
+                <h3>debugger</h3> 
+                <p>
+                    This is pretty cool. Put debugger inside a function and it works as a break point. You can then start going thorugh the code and ceck the value of each variable.                  
+                    e.g.
+                    function amIOldEnough(age){
+                        debugger;
+                        if (age < 12) {
+                        debugger;
+                        return 'No, sorry.';
+                        } else if (age < 18) {
+                        debugger;
+                        return 'Only if you are accompanied by an adult.';
+                        } else {
+                        debugger;
+                        return 'Yep, come on in!';
+                        }
+                        }
+                        amIOldEnough(16);
+                </p>
+
+        <h2>Exception Handling
+        </h2>
+            <p>
+                Handling exceptions is focused on the user. If we don't handle them it will appear as if it had crashed. PRetty much it will help keep the program running despite the excetion.
+                
+                The try, catch, finally structure will help us when we know the code might result in an exception.
+
+                function imaginarySquareRoot(number) {
+                    'use strict';
+                    let answer;
+                    try {
+                    answer = String(squareRoot(number));
+                    } catch(error) {
+                    answer = squareRoot(-number)+"i";
+                    } finally {
+                    return `+ or - ${answer}`;
+                    }
+                    }
+
+                
+            </p>
+    </section>
+</body>
+</html>
