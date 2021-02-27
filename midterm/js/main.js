@@ -6,9 +6,7 @@ class Todo_Class{
     }
 
     add(){
-        
-        const todoInput = document.querySelector("#myInput").value;
-        console.log(todoInput);
+        const todoInput = document.querySelector("#myInput").Value;
         if(todoInput == ""){
             alert("You did not enter any item!");
         } else{
@@ -18,9 +16,9 @@ class Todo_Class{
                 isDone: false
             }
 
-            todoObjectList.unshift(todoObject);
-            this.display();
-            document.querySelector("#myInput").value = '';
+        todoObjectList.unshift(todoObject);
+        this.display();
+        document.querySelector("#myInput").value = '';
         }
     }
 
@@ -38,13 +36,15 @@ class Todo_Class{
     }
 
     display() {
-        this.ulElement.innerHTML = null;
+        this.ulElement.innerHTML = "";
+
         todoObjectList.forEach((object_item) => {
             const liElement = document.createElement("li");
             const delBtn = document.createElement("i");
 
             liElement.innerText = object_item.todoText;
             liElement.setAttribute("data-id", object_item.id);
+
             delBtn.setAttribute("data-id", object_item.id);
             delBtn.classList.add("far", "fa-trash-alt");
 
@@ -58,13 +58,13 @@ class Todo_Class{
         liElement.addEventListener("click", function(e) {
             const selectedId = e.target.getAttribute("data-id");
                 myTodoList.done_undone(selectedId);
-            })
+        })
     
-            if (object_item.isDone) {
-                liElement.classList.add("checked");
-            }
-            
-            this.ulElement.appendChild(liElement);
+        if (object_item.isDone) {
+            liElement.classList.add("checked");
+        }
+        
+        this.ulElement.appendChild(liElement);
 
         })      
     }
@@ -72,6 +72,7 @@ class Todo_Class{
 //Main Program
 
 const listSection = document.querySelector("#myUL");
+
 myTodoList = new Todo_Class(listSection);
 
 document.querySelector(".addBtn").addEventListener("click", function(){
