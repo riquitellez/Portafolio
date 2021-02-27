@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 8 notes</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <section>
+        <h1>Week 8 notes</h1>
+        <h2>Change Several Property Values</h2>
+            <p>
+                div {
+                    transition: width 2s, height 4s;
+                  }
+            </p>
+        <h2>transition-timing-function</h2>
+            <p>
+                The transition-timing-function property can have the following values:
+
+                ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+                linear - specifies a transition effect with the same speed from start to end
+                ease-in - specifies a transition effect with a slow start
+                ease-out - specifies a transition effect with a slow end
+                ease-in-out - specifies a transition effect with a slow start and end
+                cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function
+            </p>
+            <p>
+                example
+
+                #div1 {transition-timing-function: linear;}
+                #div2 {transition-timing-function: ease;}
+                #div3 {transition-timing-function: ease-in;}
+                #div4 {transition-timing-function: ease-out;}
+                #div5 {transition-timing-function: ease-in-out;}
+            </p>
+            <p>
+                More Transition Examples
+The CSS transition properties can be specified one by one, like this:
+            </p>
+            <p>
+                div {
+                    transition-property: width;
+                    transition-duration: 2s;
+                    transition-timing-function: linear;
+                    transition-delay: 1s;
+                  } 
+            </p>
+            <p>
+                or by using the shorthand property transition:
+            </p>
+            <p>
+                div {
+                    transition: width 2s linear 1s;
+                  }               
+            </p>
+    </section>
+</body>
+</html>
