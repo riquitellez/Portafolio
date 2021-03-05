@@ -6,7 +6,7 @@ class Todo_Class{
     }
 
     add(){
-        const todoInput = document.querySelector("#myInput").Value;
+        const todoInput = document.querySelector("#myInput").value;
         if(todoInput == ""){
             alert("You did not enter any item!");
         } else{
@@ -24,7 +24,6 @@ class Todo_Class{
 
     done_undone(x){
         const selectedTodoIndex = todoObjectList.findIndex((item) => item.id == x);
-        console.log(todoObjectList[selectedTodoIndex].isDone);
         todoObjectList[selectedTodoIndex].isDone == false ? todoObjectList[selectedTodoIndex].isDone = true : todoObjectList[selectedTodoIndex].isDone = false;
         this.display();
     }
@@ -35,7 +34,7 @@ class Todo_Class{
         this.display();    
     }
 
-    display() {
+    display() {        
         this.ulElement.innerHTML = "";
 
         todoObjectList.forEach((object_item) => {
@@ -71,7 +70,7 @@ class Todo_Class{
 }
 //Main Program
 
-const listSection = document.querySelector("#myUL");
+const listSection = document.querySelector("#myUl");
 
 myTodoList = new Todo_Class(listSection);
 

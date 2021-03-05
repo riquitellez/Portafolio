@@ -132,7 +132,7 @@ const data = [
 
 //Cardio Day 2 code
 
-const people = [
+const people2 = [
     { name: 'Wes', year: 1988 },
     { name: 'Kait', year: 1986 },
     { name: 'Irv', year: 1970 },
@@ -150,12 +150,12 @@ const people = [
   // Some and Every Checks
   // Array.prototype.some() // is at least one person 19 or older?
 
-  const isNineteen = people.some(person => (new Date().getFullYear - person.year >= 19));
+  const isNineteen = people2.some(person => (new Date().getFullYear - person.year >= 19));
   console.log({isNineteen});
 
   // Array.prototype.every() // is everyone 19 or older?
 
-  const areNineteenOrOlder = people.every(person => (new Date().getFullYear - person.year >= 19));
+  const areNineteenOrOlder = people2.every(person => (new Date().getFullYear - person.year >= 19));
   console.log(areNineteenOrOlder);
 
   // Array.prototype.find()
