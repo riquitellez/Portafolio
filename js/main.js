@@ -9,7 +9,7 @@ const exercise = [
 },
 {
   label: "Week 4 Team Actvity",
-  url: "week4/index.html"
+  url: "Week4/index.html"
 },
 {
   label: "Week 5 Team Activity",
