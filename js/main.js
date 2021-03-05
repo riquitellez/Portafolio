@@ -1,4 +1,9 @@
-const exercise = [{
+const exercise = [
+  {
+    label: "Week 2 Team Activity",
+    url: "week2/index.html"
+  },
+  {
   label: "Week 3 Team Activity",
   url: "week3/index.html"
 },
