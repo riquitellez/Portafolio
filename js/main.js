@@ -37,6 +37,11 @@ const exercise = [
 },
 
 {
+  label: "Week 10 Team Activity",
+  url: "week10/earth-quake.html"
+},
+
+{
   label: "Final Project",
   url: "finalProject/index.html"
 }
