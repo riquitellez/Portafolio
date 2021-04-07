@@ -34,6 +34,11 @@ const exercise = [
 {
   label: "Week 9 Team Activity",
   url: "week9/index.html"
+},
+
+{
+  label: "Final Project",
+  url: "finalProject/index.html"
 }
 ];
 
